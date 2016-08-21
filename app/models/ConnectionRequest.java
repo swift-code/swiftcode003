@@ -31,5 +31,7 @@ public class ConnectionRequest extends Model
         ACCEPTED
     }
 
+    public static Finder<Long, ConnectionRequest> find = new Finder<Long, ConnectionRequest>(ConnectionRequest.class);
+
 
 }
