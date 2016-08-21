@@ -10,7 +10,7 @@ POST    /login                      controllers.Application.login()
 POST    /request/send/:senderId/:toId         controllers.ConnectionController.sendConnectionRequest(senderId: Long, toId: Long)
 POST    /request/accept/:requestId         controllers.ConnectionController.acceptConnectionRequest(requestId: Long)
 
-GET     /profile/:userId                controllers.HomeController.getProfile(userId: Long)
-PUT     /profile/:userId                controllers.HomeController.updateProfile(userId: Long)
+GET     /profile/:userId            controllers.HomeController.getProfile(userId: Long)
+PUT     /profile/:userId            controllers.HomeController.updateProfile(userId: Long)
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
