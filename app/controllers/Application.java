@@ -1,8 +1,9 @@
 package controllers;
 
-import javax.inject.*
+import javax.inject.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import forms.LoginForm;
 import forms.SignupForm;
 import models.Profile;
 import models.User;
@@ -37,5 +38,16 @@ public class Application extends Controller
         User.db().save(user);
 
         return ok((JsonNode) objectMapper.valueToTree(user));
+    }
+
+    public Result login()
+    {
+        Form<LoginForm> form = formFactory.form(LoginForm.class).bindFromRequest();
+        if(form.hasErrors())
+        {
+            return ok(form.errorsAsJson());
+        }
+
+        return ok();
     }
 }

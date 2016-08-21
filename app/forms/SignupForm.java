@@ -63,7 +63,7 @@ public class SignupForm
         this.firstName = firstName;
     }
 
-    public void setLaststName(String laststName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
